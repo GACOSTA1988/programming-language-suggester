@@ -14,7 +14,7 @@ $(document).ready(function(){
   option4 = $("select#option4");
   option5 = $("select#option5");
 
-  if (option1 === "Teams"); {
+  if (option1 === "Teams"||option2 ==="math"||option3 ==="cold"||option4 === "walk"||option5==="warm"); {
     $("#ruby").show();
   }
 
