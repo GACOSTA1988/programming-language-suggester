@@ -14,7 +14,7 @@ $(document).ready(function(){
   // option4 = $("select#option4");
   // option5 = $("select#option5");
 
-  if (option1 === "Teams" && option2==="math"); {
+  if (option1 === "Teams" && option2 === "math"); {
     $("#ruby").show();
     $("#javascript").hide();
     $("#python").hide();
@@ -28,5 +28,11 @@ $(document).ready(function(){
       $("#ruby").hide();
       $("#javascript").hide();
     };
+    if (option1 === "--") {
+    $("#javascript").hide();
+    $("#ruby").hide();
+    $("#python").hide();
+    $("#completeform").show();
+  };
   });
 });
