@@ -1,38 +1,42 @@
 $(document).ready(function(){
-  $("form#formOne").submit(function(event){
+  // Teams or Solo
+  var option1 = $("#option1").val();
+  // math or writting
+  var option2 = $("#option2").val();
+  // hot or cold
+  var option3 = $("#option3").val();
+  // walk or run
+  var option4 = $("#option4").val();
+  // warm or cold
+  var option5 = $("#option5").val();
+
+  $("#formOne").submit(function(event){
     event.preventDefault();
+    // ERROR CATCHING ALL FIELDS MUST BE FILLED OUT
+    if (option1 === "--"|| option2 ==="--"|| option3 ==="--"|| option4 ==="--"|| option5 ==="--") {
+      $("#javascript").hide();
+      $("#ruby").hide();
+      $("#python").hide();
+      $("#completeform").show();
+      return
+    }
 
-  var option1 = $(".form-control#option1").val();
-  var option2 = $(".form-control#option2").val();
-  var option3 = $(".form-control#option3").val();
-  var option4 = $(".form-control#option4").val();
-  var option5 = $(".form-control#option5").val();
+    if (option1 === "Teams" && option2 === "math") {
+      $("#ruby").show();
+      $("#javascript").hide();
+      $("#python").hide();
+      $("#completeform").hide();
+    }
 
-  // option1 = $("select#option1");
-  // option2 = $("select#option2");
-  // option3 = $("select#option3");
-  // option4 = $("select#option4");
-  // option5 = $("select#option5");
-
-  if (option1 === "Teams" && option2 === "math"); {
-    $("#ruby").show();
-    $("#javascript").hide();
-    $("#python").hide();
-  }
     if (option2 === "writting") {
-    $("#javascript").show();
-    $("#ruby").hide();
-    $("#python").hide();
-  } else if (option2 === "math") {
+      $("#javascript").show();
+      $("#ruby").hide();
+      $("#python").hide();
+    } else if (option2 === "math") {
       $("#python").show();
       $("#ruby").hide();
       $("#javascript").hide();
     };
-    if (option1 === "--") {
-    $("#javascript").hide();
-    $("#ruby").hide();
-    $("#python").hide();
-    $("#completeform").show();
-  };
+
   });
 });
